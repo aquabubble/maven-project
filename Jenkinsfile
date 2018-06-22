@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools{
-        maven 'localMaven' 
+        maven 'local-maven' 
     }
  
      stages{
