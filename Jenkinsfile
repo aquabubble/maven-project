@@ -31,13 +31,13 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i /home/aquabubble/Downloads/tomcat.pem **/target/*.war ec2-user@${params.tomcat_staging}:/var/lib/tomcat8/webapps"
+                        sh "scp -i /home/jenkins/tomcat.pem **/target/*.war ec2-user@${params.tomcat_staging}:/var/lib/tomcat8/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i /home/aquabubble/Downloads/tomcat.pem **/target/*.war ec2-user@${params.tomcat_production}:/var/lib/tomcat8/webapps"
+                        sh "scp -i /home/jenkins/tomcat.pem **/target/*.war ec2-user@${params.tomcat_production}:/var/lib/tomcat8/webapps"
                     }
                 }
             }
